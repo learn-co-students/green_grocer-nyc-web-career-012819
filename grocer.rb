@@ -27,9 +27,11 @@ def apply_coupons(cart, coupons)
   coupon_count = 0
   coupons.each do |x|
       if x[:item] == item
+        while properties[:count] > x[:num]*coupon_count
         coupon_count += 1
-        new_hash["#{item} W/COUPON"] = {price: x[:cost], clearance: properties[:clearance], count: coupon_count}
-        properties[:count] -= x[:num]
+          new_hash["#{item} W/COUPON"] = {price: x[:cost], clearance: properties[:clearance], count: coupon_count}
+          properties[:count] -= x[:num]
+        end
       end
     end
   end
