@@ -42,7 +42,7 @@ def apply_clearance(cart)
     properties.each do |key, value|
       if properties[:clearance]
         binding.pry
-        properties[:price] -= properties[:price]*0.2
+        properties[:price] = properties[:price] - properties[:price]*0.2
       end
     end
   end
