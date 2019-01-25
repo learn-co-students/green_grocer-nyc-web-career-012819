@@ -118,7 +118,7 @@ describe "Grocer" do
         coupons = [find_coupon("AVOCADO"), find_coupon("CHEESE")]
 
         multiple_coupons = apply_coupons(consolidated_cart, coupons)
-        binding.pry
+      
         ["AVOCADO", "CHEESE"].each { |item| expect(multiple_coupons[item][:count]).to eq(1) }
 
         expect(multiple_coupons["CHEESE"][:price]).to eq(6.50)
