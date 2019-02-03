@@ -37,7 +37,7 @@ end
 
 def apply_clearance(cart)
   clearance_items = cart.select { |item_name, details| details[:clearance] == true }
-  clearance_items.each { |item_name, details| !details[:price] = (details[:price] * 0.8).round(3) }
+  clearance_items.each { |item_name, details| !details[:price] = (details[:price] * 0.8).round(2) }
   cart
 end
 
