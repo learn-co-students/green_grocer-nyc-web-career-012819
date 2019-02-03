@@ -42,7 +42,7 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  one_true_cart = apply_clearance( apply_coupons( consolidate_cart(cart), coupons) )
+  one_true_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   last_check = sum_of(one_true_cart)
   last_check > 100.0 ? last_check * 0.9 : last_check
 end
