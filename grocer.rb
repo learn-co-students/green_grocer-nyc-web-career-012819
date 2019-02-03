@@ -28,7 +28,7 @@ def apply_coupons(cart, coupons)
       hash["#{item_name} W/COUPON"][:price] = coupon[:cost]
       hash["#{item_name} W/COUPON"][:count] = item[1][:count] / coupon[:num]
     else
-      hash[item.first] = item[1]
+      hash[item_name] = item[1]
     end
 
     hash
